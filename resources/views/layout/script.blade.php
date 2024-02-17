@@ -1,0 +1,15 @@
+<script src="{{ asset('assets/workout-master/js/jquery-3.3.1.min.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/jquery-migrate-3.0.1.min.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/jquery-ui.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/popper.min.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/owl.carousel.min.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/jquery.stellar.min.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/jquery.countdown.min.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/jquery.easing.1.3.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/aos.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/jquery.fancybox.min.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/jquery.sticky.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/jquery.mb.YTPlayer.min.js')}}"></script>
+<script src="{{ asset('assets/workout-master/js/main.js')}}"></script>
