@@ -24,8 +24,9 @@ class KelasController extends Controller
      */
     public function create()
     {
+        $kelas = Kelas::all();
         $pelatih = Pelatih::get();
-        return view('admin.tambah-kelas', compact('pelatih'), ['pelatih' => $pelatih]);
+        return view('admin.tambah-kelas', compact('pelatih', 'kelas'), ['pelatih' => $pelatih]);
     }
 
     /**

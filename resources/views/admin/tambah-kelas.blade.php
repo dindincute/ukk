@@ -15,14 +15,14 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="nama_kelas">Nama Kelas</label>
-                            <input type="text" class="form-control" id="nama_kelas" name="nama_kelas" value=""
+                            <input type="text" class="form-control" id="nama_kelas" name="nama_kelas" value="{{ old('nama_kelas') }}"
                                 placeholder="Masukkan nama kelas">
                         </div>
 
                         <div class="form-group">
                             <label for="nama_pelatih">Nama Pelatih</label>
                             <select name="id_pelatihs" id="id_pelatih" class="custom-select">
-                                <option value="" selected disabled hidden>--Nama Pelatih--</option>
+                                <option value="{{ old('id_pelatihs') }}" selected disabled hidden>--Nama Pelatih--</option>
                                 @foreach ($kelas as $data)
                                     <option value="{{ $data->id }}"
                                         {{ isset($kelas) ? ($kelas->id_pelatihs == $data>id ? 'selected' : '') : '' }}>
@@ -37,20 +37,20 @@
 
                         <div class="form-group">
                             <label for="durasi_kelas">Durasi Kelas </label>
-                            <input type="number" class="form-control" id="nama_pelatih" name="durasi" value=""
+                            <input type="number" class="form-control" id="nama_pelatih" name="durasi" value="{{ old('durasi') }}"
                                 placeholder="Masukkan durasi kelas dalam satuan menit">
                         </div>
 
                         <div class="form-group">
                             <label for="deskripsi">Deskripsi</label>
                             <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder="Masukkan deskripsi singkat kelas"
-                                cols="20" rows="5"></textarea>
+                                cols="20" rows="5">{{ old('deskripsi') }}</textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="nama_barang">Manfaat</label>
                             <textarea class="form-control" name="manfaat" id="manfaat" placeholder="Masukkan manfaat kelas" cols="20"
-                                rows="5"></textarea>
+                                rows="5">{{ old('manfaat') }}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Simpan</button>
