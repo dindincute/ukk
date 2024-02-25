@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
 
-@section('title', 'Data jadwal')
+@section('title', 'Data Jadwal')
 
 @section('contents')
 <div class="card shadow mb-4">
@@ -18,7 +18,6 @@
                             <th>No</th>
                             <th>Nama Kelas</th>
                             <th>Nama Pelatih</th>
-                            <th>Durasi Kelas</th>
                             <th>Jam</th>
                             <th>Hari</th>
                             <th>Image</th>
@@ -34,7 +33,6 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $data->nama_kelas }}</td>
                             <td>{{ $data->nama_pelatih }}</td>
-                            <td>{{ $data->durasi_kelas }}</td>
                             <td>{{ $data->jam }}</td>
                             <td>{{ $data->kategori }}</td>
                             <td>

@@ -14,15 +14,15 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="nama_kelas">Nama Pelatih</label>
+                            <label for="nama_pelatih">Nama Pelatih</label>
                             <input type="text" class="form-control" id="nama_kelas" name="nama_pelatih"
                                 value="{{ $pelatih->nama_pelatih }}" placeholder="Masukkan nama pelatih">
                         </div>
 
                         <div class="form-group">
-                            <label for="nama_pelatih">Deskripsi</label>
-                            <input type="text" class="form-control" id="deskripsi" name="deskripsi"
-                                value="{{ $pelatih->deskripsi }}" placeholder="Masukkan deskripsi pelatih">
+                            <label for="deskripsi">Deskripsi</label>
+                                <textarea class="form-control" name="deskripsi" id="deskripsi" value=""
+                                placeholder="Masukkan deskripsi singkat kelas" cols="20" rows="5">{{$pelatih->deskripsi}}</textarea>
                         </div>
 
                         <div class="form-group">

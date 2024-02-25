@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kelas');
-            $table->string('nama_pelatih');
-             $table->time('jam');
+            $table->string('id_pelatihs')-> nullable();
+            $table->time('jam');
             $table->string('image');
-            $table->string('durasi_kelas');
             $table->string('kategori');
             $table->timestamps();
         });
@@ -29,5 +28,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('jadwals');
+
     }
 };

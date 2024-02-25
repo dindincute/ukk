@@ -16,10 +16,14 @@ class LandingController extends Controller
 
     public function classes()
     {
-        $kelas = Kelas::all();
+        $kelas = Kelas::paginate(4);
 
         return view('classes', compact('kelas'));
     }
+
+    // public function data_classes(){
+    //     return view
+    // }
 
     public function jadwal()
     {
@@ -39,6 +43,11 @@ class LandingController extends Controller
     {
         return view('services');
     }
+    public function detail_kelas(string $id)
+    {
+        $kelas = Kelas::findOrFail($id);
 
+        return view('data-kelas', compact('kelas'));
+    }
 
 }

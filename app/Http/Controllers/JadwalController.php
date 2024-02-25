@@ -36,7 +36,6 @@ class JadwalController extends Controller
             'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'nama_kelas' => 'required',
             'nama_pelatih' => 'required',
-            'durasi_kelas' => 'required',
             'jam' => 'required',
             'kategori' => 'required'
         ]);
@@ -50,7 +49,6 @@ class JadwalController extends Controller
             'image' => $image->hashName(),
             'nama_kelas' => $request->nama_kelas,
             'nama_pelatih' => $request->nama_pelatih,
-            'durasi_kelas' => $request->durasi_kelas,
             'jam' => $request->jam,
             'kategori' => $request->kategori
         ]);
@@ -91,7 +89,6 @@ class JadwalController extends Controller
             'image' => 'image|mimes:jpeg,jpg,png|max:2048',
             'nama_kelas' => 'required',
             'nama_pelatih' => 'required',
-            'durasi_kelas' => 'required',
             'jam' => 'required',
             'kategori' => 'required'
         ]);
@@ -102,7 +99,6 @@ class JadwalController extends Controller
         //update nama_kelas and nama_pelatih
         $jadwal->nama_kelas = $request->nama_kelas;
         $jadwal->nama_pelatih = $request->nama_pelatih;
-        $jadwal->durasi_kelas = $request->durasi_kelas;
         $jadwal->jam = $request->jam;
         $jadwal->kategori = $request->kategori;
 
@@ -124,7 +120,7 @@ class JadwalController extends Controller
 
         //redirect to index
 
-        return redirect('jadwal-kelas')->with('success', 'Berhasil tambah jadwal kelas.');
+        return redirect('jadwal-kelas')->with('success', 'Berhasil edit jadwal kelas.');
     }
 
     /**

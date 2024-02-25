@@ -19,6 +19,8 @@
                                 <th>Nama Kelas</th>
                                 <th>Nama Pelatih</th>
                                 <th>Durasi</th>
+                                <th>Manfaat</th>
+                                <th>Deskripsi</th>
                                 <th>Image</th>
                                 <th>Aksi</th>
                             </tr>
@@ -28,31 +30,34 @@
                     </thead>
                     <tbody>
                         @foreach ($kelas as $data)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->nama_kelas }}</td>
-                                <td>{{ $data->nama_pelatih }}</td>
-                                <td>{{ $data->durasi }}</td>
-                                <td>
-                                    <img src="{{ asset('/storage/posts/' . $data->image) }}" width="100">
-                                </td>
-                                <td>
-                                    <div class="d-flex justify-content-center">
-                                        <a href="{{ '/edit-kelas/' . $data->id }}" class="btn btn-info btn-circle mr-2">
-                                            <i class="fas fa-info-circle"></i>
-                                        </a>
-                                        <form action="{{ '/kelas/' . $data->id }}" method="POST" class="delete-form">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-info btn-circle icon btn-danger"
-                                                data-confirm-delete="true">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-                        @endforeach
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $data->nama_kelas }}</td>
+                            <td>{{ optional($data->pelatih)->nama_pelatih }}</td>
+                            <td>{{ $data->durasi }}</td>
+                            <td>{{ $data->manfaat }}</td>
+                            <td>{{ $data->deskripsi }}</td>
+
+                            <td>
+                                <img src="{{ asset('/storage/posts/' . $data->image) }}" width="100">
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-center">
+                                    <a href="{{ '/edit-kelas/' . $data->id }}" class="btn btn-info btn-circle mr-2">
+                                        <i class="fas fa-info-circle"></i>
+                                    </a>
+                                    <form action="{{ '/kelas/' . $data->id }}" method="POST" class="delete-form">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-info btn-circle icon btn-danger" data-confirm-delete="true">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+
                     </tbody>
                 </table>
             </div>

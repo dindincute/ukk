@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Pelatih;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Kelas;
 use Illuminate\Http\Request;
@@ -22,7 +24,8 @@ class KelasController extends Controller
      */
     public function create()
     {
-        return view('admin.tambah-kelas');
+        $pelatih = Pelatih::get();
+        return view('admin.tambah-kelas', compact('pelatih'), ['pelatih' => $pelatih]);
     }
 
     /**
@@ -36,7 +39,9 @@ class KelasController extends Controller
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'nama_kelas' => 'required',
-            'nama_pelatih' => 'required',
+            'id_pelatihs' => 'required',
+            'deskripsi' => 'required',
+            'manfaat' => 'required',
             'durasi' => 'required',
         ]);
 
@@ -48,7 +53,9 @@ class KelasController extends Controller
         Kelas::create([
             'image' => $image->hashName(),
             'nama_kelas' => $request->nama_kelas,
-            'nama_pelatih' => $request->nama_pelatih,
+            'id_pelatihs' => $request->id_pelatihs,
+            'deskripsi' => $request->deskripsi,
+            'manfaat' => $request->manfaat,
             'durasi' => $request->durasi
         ]);
 
@@ -74,7 +81,7 @@ class KelasController extends Controller
     {
         //get post by ID
         $kelas = Kelas::findOrFail($id);
-
+        $pelatih = Pelatih::get();
         return view('admin.edit-kelas', compact('kelas'));
     }
 
@@ -87,16 +94,20 @@ class KelasController extends Controller
         $this->validate($request, [
             'image' => 'image|mimes:jpeg,jpg,png|max:2048',
             'nama_kelas' => 'required',
-            'nama_pelatih' => 'required',
+            'id_pelatihs' => 'required',
+            'deskripsi' => 'required',
+            'manfaat' => 'required',
             'durasi' => 'required'
         ]);
 
         //get post by ID
         $kelas = Kelas::findOrFail($id);
-
+        $pelatih = Pelatih::get();
         //update nama_kelas and nama_pelatih
         $kelas->nama_kelas = $request->nama_kelas;
-        $kelas->nama_pelatih = $request->nama_pelatih;
+        $kelas->deskripsi = $request->deskripsi;
+        $kelas->id_pelatihs = $request->id_pelatihs;
+        $kelas->manfaat = $request->manfaat;
         $kelas->durasi = $request->durasi;
 
         //check apakah image diupload

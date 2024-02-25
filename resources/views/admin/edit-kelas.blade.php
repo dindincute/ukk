@@ -21,14 +21,32 @@
 
                         <div class="form-group">
                             <label for="nama_pelatih">Nama Pelatih</label>
-                            <input type="text" class="form-control" id="nama_pelatih" name="nama_pelatih"
-                                value="{{ $kelas->nama_pelatih }}" placeholder="Masukkan nama pelatih">
+                            <select name="id_pelatihs" id="id_pelatih" class="custom-select">
+                                <option value="" selected disabled hidden>--Nama Pelatih--</option>
+                                @foreach ($kelas as $data)
+                                    <option value="{{ $data->id }}"
+                                        {{ isset($kelas) ? ($kelas->id_pelatihs == $data>id ? 'selected' : '') : '' }}>
+                                        {{ $data->nama_pelatih }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="form-group">
                             <label for="durasi">Durasi Kelas </label>
                             <input type="text" class="form-control" id="durasi" name="durasi"
                                 value="{{ $kelas->durasi }}" placeholder="Masukkan durasi kelas">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nama_kelas">Deskripsi</label>
+                                <textarea class="form-control" name="deskripsi" id="deskripsi" value=""
+                                 placeholder="Masukkan deskripsi kelas" cols="20" rows="5">{{$kelas->deskripsi}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nama_barang">Manfaat</label>
+                            <textarea class="form-control" name="manfaat" id="manfaat" value=""
+                            placeholder="Masukkan manfaat kelas" cols="20" rows="5">{{$kelas->manfaat}}</textarea>
                         </div>
 
                         <div class="form-group">

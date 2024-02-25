@@ -7,7 +7,7 @@ body {
     line-height: 1.7;
     font-weight: 300;
     font-size: 1.1rem;
-    color: #989898;
+    color: #fffcfc;
 }
 
 ::-moz-selection {
@@ -189,11 +189,12 @@ h5,
 }
 
 .site-section {
-    padding: 2.5em 0;
+    padding-top: 7em;
 }
+
 @media (min-width: 768px) {
     .site-section {
-        padding: 5em 0;
+        padding-top: 5em 0;
     }
 }
 .site-section.site-section-sm {
@@ -1100,6 +1101,7 @@ h5,
 }
 
 .class-item {
+    background: #d7587c;
     border-radius: 4px;
     -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
@@ -1134,12 +1136,12 @@ h5,
 }
 .class-item .class-item-text p,
 .class-item .class-item-text span {
-    color: #aeaeae;
+    color: #fffefe;
 }
 .class-item .class-item-text span {
     font-size: 16px;
 }
-.class-item:hover {
+/* .class-item:hover {
     z-index: 2;
     background: #c83660;
 }
@@ -1149,7 +1151,7 @@ h5,
 .class-item:hover p,
 .class-item:hover span {
     color: rgba(255, 255, 255, 0.6);
-}
+} */
 
 .days {
     width: 100%;

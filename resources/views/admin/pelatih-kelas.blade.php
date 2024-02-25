@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
 
-@section('title', 'Data pelatih')
+@section('title', 'Data Pelatih')
 
 @section('contents')
     <div class="card shadow mb-4">

@@ -28,19 +28,14 @@
                             <input type="file" class="form-control" name="image">
                         </div>
                         <div class="form-group">
-                            <label for="nama_barang">Durasi Kelas </label>
-                            <input type="number" class="form-control" id="nama_barang" name="durasi_kelas" value=""
-                                placeholder="Masukkan durasi kelas">
-                        </div>
-                        <div class="form-group">
                             <label for="jam">Jam</label>
                             <input type="time" class="form-control" id="jam" name="jam" value=""
                                 placeholder="Masukkan jam (format: HH:MM)">
                         </div>
                         <div class="form-group">
                             <label for="kategori">Hari</label>
-                            <select class="form-select" aria-label="Default select example" id="kategori" name="kategori">
-                                <option selected hidden>Pilih hari</option>
+                            <select class="form-select form-control" aria-label="Default select example" id="kategori" name="kategori">
+                                <option selected hidden>--- Pilih hari---</option>
                                 <option value="senin">Senin</option>
                                 <option value="selasa">Selasa</option>
                                 <option value="rabu">Rabu</option>

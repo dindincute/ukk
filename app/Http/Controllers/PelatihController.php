@@ -45,7 +45,7 @@ class PelatihController extends Controller
         Pelatih::create([
             'image' => $image->hashName(),
             'nama_pelatih' => $request->nama_pelatih,
-            'deskripsi' => 'required',
+            'deskripsi' => $request->deskripsi,
 
         ]);
 

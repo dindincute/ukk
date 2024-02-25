@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('image');
             $table->timestamps();
         });
+        Schema::table('kelas', function (Blueprint $table) {
+			$table->foreignId('id_pelatihs')->references('id')->on('pelatihs');
+		});
+
     }
 
     /**

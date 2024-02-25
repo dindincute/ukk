@@ -20,10 +20,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="nama_barang">Deskripsi</label>
-                            <input type="text" class="form-control" id="nama_pelatih" name="deskripsi" value=""
-                                placeholder="Masukkan deskripsi pelatih">
+                            <label for="nama_kelas">Deskripsi</label>
+                                <textarea class="form-control" name="deskripsi" id="deskripsi"
+                                placeholder="Masukkan deskripsi kelas" cols="20" rows="5" value="" ></textarea>
                         </div>
+                        
 
                         <div class="form-group">
                             <label for="harga">Image</label>

@@ -11,8 +11,14 @@ class Kelas extends Model
 
     protected $fillable = [
         'nama_kelas',
-        'nama_pelatih',
+        'id_pelatihs',
         'image',
-        'durasi'
+        'durasi',
+        'deskripsi',
+        'manfaat',
     ];
+    public function nama_pelatih()
+	{
+		return $this->hasMany(Pelatih::class, 'id_pelatihs');
+	}
 }

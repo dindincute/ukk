@@ -13,14 +13,9 @@ class Jadwal extends Model
         'nama_kelas',
         'nama_pelatih',
         'jam',
-        'durasi_kelas',
         'kategori',
         'image',
-
     ];
 
-    public function getJamFormattedAttribute()
-    {
-        return Carbon::parse($this->attributes['jam'])->format('H:i');
-    }
+
 }

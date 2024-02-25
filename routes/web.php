@@ -22,9 +22,11 @@ use Illuminate\Support\Facades\Route;
 // route view tampilan
 Route::get('/', [LandingController::class, 'index']);
 Route::get('/classes', [LandingController::class, 'classes']);
+Route::get('/classes/{id}', [LandingController::class, 'detail_kelas']);
 Route::get('/jadwal', [LandingController::class, 'jadwal']);
 Route::get('/pelatih', [LandingController::class, 'pelatih']);
 Route::get('/tentang', [LandingController::class, 'tentang']);
+
 // Route::get('/contact', [LandingController::class, 'contact']);
 
 

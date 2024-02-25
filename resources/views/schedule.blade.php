@@ -1,18 +1,16 @@
 @extends('layout.main')
 @section('schedule')
-
-    @if ($jadwal->count() > 0)
-        <div class="site-section" id="schedule-section">
-            <div class="container">
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-md-8  section-heading">
-                        <span class="subheading">Fitness </span>
-                        <h2 class="heading mb-3">Jadwal</h2>
-                        <p>Jawal untuk kelas gym kami </p>
-                    </div>
-                </div>
+<div class="site-section" id="schedule-section">
+    <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-8  section-heading">
+                <h2 class="heading mb-3">Jadwal</h2>
+                <p class="text-black">Temukan jadwal kelas kami setiap minggunya di sini.</p>
+            </div>
+        </div>
 
 
+        @if ($jadwal->count() > 0)
                 <div class="row">
                     <div class="col-12">
                         <ul class="nav days d-flex" role="tablist">
@@ -52,22 +50,25 @@
 
                 <div class="tab-content">
 
-                    {{-- minggu --}}
+                    {{-- Jadwal Hari Minggu --}}
                     <div class="tab-pane fade show active" id="nav-sunday" role="tabpanel" aria-labelledby="nav-sunday-tab">
                         <div class="row">
                             @foreach ($jadwal->where('kategori', 'minggu') as $data)
                                 <div class="col-lg-6">
                                     <div class="class-item d-flex align-items-center">
+                                        {{-- Untuk menampilkan gambar yang di isi di crud --}}
                                         <a href="single.html" class="class-item-thumbnail">
                                             <img src="{{ asset('storage/posts/' . $data->image) }}"
                                                 style="height: 7rem; width: 25rem; object-fit:cover; border-radius: 0.25rem"
                                                 alt="Image">
                                         </a>
                                         <div class="class-item-text">
+                                            {{-- Untuk menampilkan jam yang diisi di crud --}}
                                             <span>{{ $data->kategori }} . {{ $data->jam }}</span>
-                                            <h2><a href="single.html">{{ $data->nama_kelas }}</a></h2>
-                                            <span>{{ $data->nama_pelatih }}</span>,
-                                            <span>{{ $data->durasi_kelas }}</span>
+                                            {{-- Untuk menampilkan nama kelas yang diisi di crud --}}
+                                            <h2>{{ $data->nama_kelas }}</h2>
+                                            {{-- Untuk menampilkan nama pelatih yang diisi di crud --}}
+                                            <span>{{ $data->nama_pelatih }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -76,22 +77,25 @@
                         </div>
                     </div>
 
-                    {{-- senin --}}
+                    {{-- Jadwal Hari Senin --}}
                     <div class="tab-pane fade" id="nav-monday" role="tabpanel" aria-labelledby="nav-monday-tab">
                         <div class="row">
                             @foreach ($jadwal->where('kategori', 'senin') as $data)
                                 <div class="col-lg-6">
                                     <div class="class-item d-flex align-items-center">
+                                        {{-- Untuk menampilkan gambar yang diisi di crud --}}
                                         <a href="single.html" class="class-item-thumbnail">
                                             <img src="{{ asset('storage/posts/' . $data->image) }}"
                                                 style="height: 7rem; width: 25rem; object-fit:cover; border-radius: 0.25rem"
                                                 alt="Image">
                                         </a>
                                         <div class="class-item-text">
+                                            {{-- Untuk menampilkan jam yang diisi di crud --}}
                                             <span>{{ $data->kategori }} . {{ $data->jam }}</span>
-                                            <h2><a href="single.html">{{ $data->nama_kelas }}</a></h2>
-                                            <span>{{ $data->nama_pelatih }}</span>,
-                                            <span>{{ $data->durasi_kelas }}</span>
+                                            {{-- Untuk menampilkan nama kelas yang diisi di crud --}}
+                                            <h2>{{ $data->nama_kelas }}</h2>
+                                            {{-- Untuk menampilkan nama pelatih yang di isi di crud --}}
+                                            <span>{{ $data->nama_pelatih }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -100,22 +104,25 @@
                         </div>
                     </div>
 
-                    {{-- selasa --}}
+                    {{-- Jadwal Hari Selasa --}}
                     <div class="tab-pane fade" id="nav-tuesday" role="tabpanel" aria-labelledby="nav-tuesday-tab">
                         <div class="row">
                             @foreach ($jadwal->where('kategori', 'selasa') as $data)
                                 <div class="col-lg-6">
                                     <div class="class-item d-flex align-items-center">
+                                        {{-- Untuk menampilkan gambar yang diisi di crud --}}
                                         <a href="single.html" class="class-item-thumbnail">
                                             <img src="{{ asset('storage/posts/' . $data->image) }}"
                                                 style="height: 7rem; width: 25rem; object-fit:cover; border-radius: 0.25rem"
                                                 alt="Image">
                                         </a>
                                         <div class="class-item-text">
+                                            {{-- Untuk menampilkan jam yang diisi di crud --}}
                                             <span>{{ $data->kategori }} . {{ $data->jam }}</span>
+                                            {{-- Untuk menampilkan nama kelas yang diisi di crud --}}
                                             <h2><a href="single.html">{{ $data->nama_kelas }}</a></h2>
-                                            <span>{{ $data->nama_pelatih }}</span>,
-                                            <span>{{ $data->durasi_kelas }}</span>
+                                            {{-- Untuk menampilkan nama pelatih yang diisi di crud --}}
+                                            <span>{{ $data->nama_pelatih }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -124,22 +131,25 @@
                         </div>
                     </div>
 
-                    {{-- rabu --}}
+                    {{-- Jadwal Hari Rabu --}}
                     <div class="tab-pane fade" id="nav-wednesday" role="tabpanel" aria-labelledby="nav-wednesday-tab">
                         <div class="row">
                             @foreach ($jadwal->where('kategori', 'rabu') as $data)
                                 <div class="col-lg-6">
                                     <div class="class-item d-flex align-items-center">
+                                        {{-- Untuk menampilkan gambar yang diisi di crud --}}
                                         <a href="single.html" class="class-item-thumbnail">
                                             <img src="{{ asset('storage/posts/' . $data->image) }}"
                                                 style="height: 7rem; width: 25rem; object-fit:cover; border-radius: 0.25rem"
                                                 alt="Image">
                                         </a>
                                         <div class="class-item-text">
+                                            {{-- Untuk menampilkan jam yang diisi di crud --}}
                                             <span>{{ $data->kategori }} . {{ $data->jam }}</span>
+                                            {{-- Untuk menampilkan nama kelas yang diisi di crud --}}
                                             <h2><a href="single.html">{{ $data->nama_kelas }}</a></h2>
-                                            <span>{{ $data->nama_pelatih }}</span>,
-                                            <span>{{ $data->durasi_kelas }}</span>
+                                            {{-- Untuk menampilkan nama pelatih yang diisi di crud --}}
+                                            <span>{{ $data->nama_pelatih }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -148,22 +158,25 @@
                         </div>
                     </div>
 
-                    {{-- kamis --}}
+                    {{-- Jadwal Hari Kamis --}}
                     <div class="tab-pane fade" id="nav-thursday" role="tabpanel" aria-labelledby="nav-thursday-tab">
                         <div class="row">
                             @foreach ($jadwal->where('kategori', 'kamis') as $data)
                                 <div class="col-lg-6">
                                     <div class="class-item d-flex align-items-center">
+                                        {{-- Untuk menampilkan gambar yang diisi di crud --}}
                                         <a href="single.html" class="class-item-thumbnail">
                                             <img src="{{ asset('storage/posts/' . $data->image) }}"
                                                 style="height: 7rem; width: 25rem; object-fit:cover; border-radius: 0.25rem"
                                                 alt="Image">
                                         </a>
                                         <div class="class-item-text">
+                                            {{-- Untuk menampilkan jam yang diisi di crud --}}
                                             <span>{{ $data->kategori }} . {{ $data->jam }}</span>
+                                            {{-- Untuk menampilkan nama kelas yang diisi di crud --}}
                                             <h2><a href="single.html">{{ $data->nama_kelas }}</a></h2>
-                                            <span>{{ $data->nama_pelatih }}</span>,
-                                            <span>{{ $data->durasi_kelas }}</span>
+                                            {{-- Untuk menampilkan nama pelatih yang diisi di crud --}}
+                                            <span>{{ $data->nama_pelatih }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -172,22 +185,25 @@
                         </div>
                     </div>
 
-                    {{-- friday --}}
+                    {{-- Jadwal Hari Jumat --}}
                     <div class="tab-pane fade" id="nav-friday" role="tabpanel" aria-labelledby="nav-friday-tab">
                         <div class="row">
                             @foreach ($jadwal->where('kategori', 'jumat') as $data)
                                 <div class="col-lg-6">
                                     <div class="class-item d-flex align-items-center">
+                                        {{-- Untuk menampilkan gambar yang diisi di crud --}}
                                         <a href="single.html" class="class-item-thumbnail">
                                             <img src="{{ asset('storage/posts/' . $data->image) }}"
                                                 style="height: 7rem; width: 25rem; object-fit:cover; border-radius: 0.25rem"
                                                 alt="Image">
                                         </a>
                                         <div class="class-item-text">
+                                            {{-- Untuk menampilkan jam yang diisi di crud --}}
                                             <span>{{ $data->kategori }} . {{ $data->jam }}</span>
+                                            {{-- Untuk menampilkan nama kelas yang diisi di crud --}}
                                             <h2><a href="single.html">{{ $data->nama_kelas }}</a></h2>
-                                            <span>{{ $data->nama_pelatih }}</span>,
-                                            <span>{{ $data->durasi_kelas }}</span>
+                                            {{-- Untuk menampilkan nama pelatih yang diisi di crud --}}
+                                            <span>{{ $data->nama_pelatih }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -196,22 +212,25 @@
                         </div>
                     </div>
 
-                    {{--  sabtu --}}
+                    {{-- Jadwal Hari Sabtu --}}
                     <div class="tab-pane fade" id="nav-saturday" role="tabpanel" aria-labelledby="nav-saturday-tab">
                         <div class="row">
                             @foreach ($jadwal->where('kategori', 'sabtu') as $data)
                                 <div class="col-lg-6">
                                     <div class="class-item d-flex align-items-center">
+                                        {{-- Untuk menampilkan gambar yang diisi di crud --}}
                                         <a href="single.html" class="class-item-thumbnail">
                                             <img src="{{ asset('storage/posts/' . $data->image) }}"
                                                 style="height: 7rem; width: 25rem; object-fit:cover; border-radius: 0.25rem"
                                                 alt="Image">
                                         </a>
                                         <div class="class-item-text">
+                                            {{-- Untuk menampilkan jam yang diisi di crud --}}
                                             <span>{{ $data->kategori }} . {{ $data->jam }}</span>
+                                            {{-- Untuk menampilkan nama kelas yang diisi di crud --}}
                                             <h2><a href="single.html">{{ $data->nama_kelas }}</a></h2>
-                                            <span>{{ $data->nama_pelatih }}</span>,
-                                            <span>{{ $data->durasi_kelas }}</span>
+                                            {{-- Untuk menampilkan nama pelatih yang diisi di crud --}}
+                                            <span>{{ $data->nama_pelatih }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -224,19 +243,4 @@
             </div>
         </div>
     @endif
-
-
-
-    <div class="bgimg" style="background-image: url('{{ asset('assets/workout-master/images/bg_1.jpg') }}');"
-        data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="row align-items-center justify-content-center text-center">
-                <div class="col-md-7">
-                    <h2 class="">Your Fitness Partner Where Ever You Are</h2>
-                    <p class="lead mx-auto desc mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Sint, nisi cum officia alias recusandae neque reprehenderit.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection

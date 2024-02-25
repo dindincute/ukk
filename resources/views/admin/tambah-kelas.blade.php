@@ -20,20 +20,37 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="nama_barang">Nama Pelatih</label>
-                            <input type="text" class="form-control" id="nama_pelatih" name="nama_pelatih" value=""
-                                placeholder="Masukkan nama pelatih">
+                            <label for="nama_pelatih">Nama Pelatih</label>
+                            <select name="id_pelatihs" id="id_pelatih" class="custom-select">
+                                <option value="" selected disabled hidden>--Nama Pelatih--</option>
+                                @foreach ($kelas as $data)
+                                    <option value="{{ $data->id }}"
+                                        {{ isset($kelas) ? ($kelas->id_pelatihs == $data>id ? 'selected' : '') : '' }}>
+                                        {{ $data->nama_pelatih }}</option>
+                                @endforeach
+                            </select>
                         </div>
-
                         <div class="form-group">
-                            <label for="harga">Image</label>
+                            <label for="image">Image</label>
                             <input type="file" class="form-control" name="image">
                         </div>
 
                         <div class="form-group">
-                            <label for="nama_barang">Durasi Kelas </label>
+                            <label for="durasi_kelas">Durasi Kelas </label>
                             <input type="number" class="form-control" id="nama_pelatih" name="durasi" value=""
-                                placeholder="Masukkan durasi kelas">
+                                placeholder="Masukkan durasi kelas dalam satuan menit">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deskripsi">Deskripsi</label>
+                            <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder="Masukkan deskripsi singkat kelas"
+                                cols="20" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nama_barang">Manfaat</label>
+                            <textarea class="form-control" name="manfaat" id="manfaat" placeholder="Masukkan manfaat kelas" cols="20"
+                                rows="5"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Simpan</button>

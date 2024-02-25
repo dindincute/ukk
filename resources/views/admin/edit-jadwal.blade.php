@@ -29,14 +29,9 @@
                             <input type="file" class="form-control" name="image">
                         </div>
                         <div class="form-group">
-                            <label for="durasi">Durasi Kelas </label>
-                            <input type="number" class="form-control" id="durasi" name="durasi_kelas"
-                                value="{{ $jadwal->durasi_kelas }}" placeholder="Masukkan durasi kelas">
-                        </div>
-                        <div class="form-group">
-                            <label for="hari">Hari</label>
-                            <input type="text" class="form-control" id="hari" name="hari"
-                                value="{{ $jadwal->hari }}" placeholder="Masukkan hari">
+                            <label for="kategori">Hari</label>
+                            <input type="text" class="form-control" id="kategori" name="kategori"
+                                value="{{ $jadwal->kategori }}" placeholder="Masukkan hari">
                         </div>
                         <div class="form-group">
                             <label for="jam">Jam</label>
