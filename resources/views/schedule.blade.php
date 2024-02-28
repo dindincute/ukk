@@ -135,14 +135,14 @@
                         @endforeach
                     </div>
                     @else
-                        <h2 class="mb-5 text-center">Tidak ada jadwal hari ini.</h2>
+                        <h2 class="mb-5 text-center">Tidak ada jadwal kelas hari ini.</h2>
                     @endif
 
                 </div>
 
                 {{-- Jadwal Hari Rabu --}}
                 <div class="tab-pane fade" id="nav-wednesday" role="tabpanel" aria-labelledby="nav-wednesday-tab">
-                    
+                    @if ($jadwal->count() > 0)
                     <div class="row">
                         @foreach ($jadwal->where('kategori', 'rabu') as $data)
                             <div class="col-lg-6">
@@ -165,10 +165,15 @@
                             </div>
                         @endforeach
                     </div>
+                    @else
+                    <h2 class="mb-5 text-center">Tidak ada jadwal kelas hari ini.</h2>
+                    @endif
+
                 </div>
 
                 {{-- Jadwal Hari Kamis --}}
                 <div class="tab-pane fade" id="nav-thursday" role="tabpanel" aria-labelledby="nav-thursday-tab">
+                    @if ($jadwal->count() > 0)
                     <div class="row">
                         @foreach ($jadwal->where('kategori', 'kamis') as $data)
                             <div class="col-lg-6">
@@ -191,10 +196,15 @@
                             </div>
                         @endforeach
                     </div>
+                    @else
+                    <h2 class="mb-5 text-center">Tidak ada jadwal kelas hari ini.</h2>
+                    @endif
+
                 </div>
 
                 {{-- Jadwal Hari Jumat --}}
                 <div class="tab-pane fade" id="nav-friday" role="tabpanel" aria-labelledby="nav-friday-tab">
+                    @if ($jadwal->count() > 0)
                     <div class="row">
                         @foreach ($jadwal->where('kategori', 'jumat') as $data)
                             <div class="col-lg-6">
@@ -217,10 +227,15 @@
                             </div>
                         @endforeach
                     </div>
+                    @else
+                    <h2 class="mb-5 text-center">Tidak ada jadwal kelas hari ini.</h2>
+                    @endif
+
                 </div>
 
                 {{-- Jadwal Hari Sabtu --}}
                 <div class="tab-pane fade" id="nav-saturday" role="tabpanel" aria-labelledby="nav-saturday-tab">
+                    @if ($jadwal->count() > 0)
                     <div class="row">
                         @foreach ($jadwal->where('kategori', 'sabtu') as $data)
                             <div class="col-lg-6">
@@ -243,6 +258,10 @@
                             </div>
                         @endforeach
                     </div>
+                    @else
+                    <h2 class="mb-5 text-center">Tidak ada jadwal kelas hari ini.</h2>
+                    @endif
+
                 </div>
             </div>
         </div>
