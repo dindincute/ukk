@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jadwal;
+use App\Models\Kelas;
+use App\Models\Pelatih;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,7 +23,10 @@ class JadwalController extends Controller
      */
     public function create()
     {
-        return view('admin.tambah-jadwal');
+        $jadwal = Jadwal::all();
+        $pelatih = Pelatih::get();
+        $kelas = Kelas::get();
+        return view('admin.tambah-jadwal', compact('jadwal', 'kelas', 'pelatih'), ['kelas' =>$kelas] , ['pelatih' =>$pelatih]);
 
 
     }
@@ -34,8 +39,8 @@ class JadwalController extends Controller
         //validate form
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
-            'nama_kelas' => 'required',
-            'nama_pelatih' => 'required',
+            'nam_kelas' => 'required',
+            'nam_pelatih' => 'required',
             'jam' => 'required',
             'kategori' => 'required'
         ]);
@@ -47,8 +52,8 @@ class JadwalController extends Controller
         //menambhakan data
         Jadwal::create([
             'image' => $image->hashName(),
-            'nama_kelas' => $request->nama_kelas,
-            'nama_pelatih' => $request->nama_pelatih,
+            'nam_kelas' => $request->nam_kelas,
+            'nam_pelatih' => $request->nam_pelatih,
             'jam' => $request->jam,
             'kategori' => $request->kategori
         ]);
@@ -74,8 +79,11 @@ class JadwalController extends Controller
     {
         //get post by ID
         $jadwal = Jadwal::findOrFail($id);
+        $pelatih = Pelatih::get();
+        $kelas = Kelas::get();
 
-        return view('admin.edit-jadwal', compact('jadwal'));
+        return view('admin.edit-jadwal', compact('jadwal', 'kelas', 'pelatih'), ['kelas' =>$kelas] , ['pelatih' =>$pelatih]);
+
     }
 
     /**
@@ -87,8 +95,8 @@ class JadwalController extends Controller
         //validate form
         $this->validate($request, [
             'image' => 'image|mimes:jpeg,jpg,png|max:2048',
-            'nama_kelas' => 'required',
-            'nama_pelatih' => 'required',
+            'nam_kelas' => 'required',
+            'nam_pelatih' => 'required',
             'jam' => 'required',
             'kategori' => 'required'
         ]);
@@ -97,8 +105,8 @@ class JadwalController extends Controller
         $jadwal = Jadwal::findOrFail($id);
 
         //update nama_kelas and nama_pelatih
-        $jadwal->nama_kelas = $request->nama_kelas;
-        $jadwal->nama_pelatih = $request->nama_pelatih;
+        $jadwal->nam_kelas = $request->nam_kelas;
+        $jadwal->nam_pelatih = $request->nam_pelatih;
         $jadwal->jam = $request->jam;
         $jadwal->kategori = $request->kategori;
 

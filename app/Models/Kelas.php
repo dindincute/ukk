@@ -7,18 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
-    use HasFactory;
+    protected $table = 'kelas';
 
     protected $fillable = [
         'nama_kelas',
-        'id_pelatihs',
         'image',
         'durasi',
         'deskripsi',
         'manfaat',
+        'id_pelatih', // Kolom yang berhubungan dengan tabel pelatihs
     ];
-    public function nama_pelatih()
+
+    public function pelatih()
+    {
+        return $this->belongsTo(Pelatih::class, 'id_pelatih');
+    }
+
+    public function kelas()
 	{
-		return $this->hasMany(Pelatih::class, 'id_pelatihs');
+		return $this->hasMany(Jadwal::class, 'nam_kelas');
 	}
 }

@@ -33,7 +33,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $data->nama_kelas }}</td>
-                            <td>{{ optional($data->pelatih)->nama_pelatih }}</td>
+                            <td>{{ optional ($data->pelatih)->nama_pelatih }}</td>
                             <td>{{ $data->durasi }}</td>
                             <td>{{ $data->manfaat }}</td>
                             <td>{{ $data->deskripsi }}</td>

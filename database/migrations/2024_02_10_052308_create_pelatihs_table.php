@@ -13,14 +13,11 @@ return new class extends Migration
     {
         Schema::create('pelatihs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_pelatih');
+            $table->string('nama_pelatih')->nullable();
             $table->string('deskripsi');
             $table->string('image');
             $table->timestamps();
         });
-        Schema::table('kelas', function (Blueprint $table) {
-			$table->foreignId('id_pelatihs')->references('id')->on('pelatihs');
-		});
 
     }
 

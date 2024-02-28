@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_kelas');
-            $table->string('id_pelatihs')-> nullable();
+            $table->foreignId('nam_kelas')->constrained('kelas');
+            $table->foreignId('nam_pelatih')->constrained('pelatihs');
             $table->time('jam');
             $table->string('image');
             $table->string('kategori');

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KelasController;
@@ -40,6 +41,8 @@ Route::post('/register', [LoginController::class, 'register']);
 //route admin
 Route::group(['middleware' => 'auth.admin'], function () {
 
+
+
     // menampilkan class index
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/kelas', [DashboardController::class, 'kelas']);
@@ -70,6 +73,10 @@ Route::group(['middleware' => 'auth.admin'], function () {
     Route::get('/edit-jadwal/{id}', [JadwalController::class, 'edit']);
     Route::put('/edit-jadwal/{id}', [JadwalController::class, 'update']);
     Route::delete('/jadwal-kelas/{id}', [JadwalController::class, 'destroy']);
+
+     // menampilkan update profile admin
+     Route::get('/edit-profile', [DashboardController::class, 'profile']);
+     Route::post('/edit-profile', [DashboardController::class, 'edit_profile']);
 
     //route logout
     Route::get('/logout', [LoginController::class, 'logout']);

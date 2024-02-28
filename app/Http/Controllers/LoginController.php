@@ -23,6 +23,7 @@ class LoginController extends Controller
         $jadwal = Jadwal::all();
         $kelas = Kelas::all();
         $pelatih = Pelatih::all();
+        $ubahprofile = User::all();
 
         $data = [
             'email' => $request->input('email'),

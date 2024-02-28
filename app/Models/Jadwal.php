@@ -10,12 +10,22 @@ class Jadwal extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama_kelas',
-        'nama_pelatih',
+        'nam_kelas',
+        'nam_pelatih',
         'jam',
         'kategori',
         'image',
     ];
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class, 'nam_kelas');
+    }
+
+    public function pelatih()
+    {
+        return $this->belongsTo(Pelatih::class, 'nam_pelatih');
+    }
+
 
 
 }

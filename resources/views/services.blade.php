@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row justify-content-center text-center mb-5" data-aos="fade-up">
             <div class="col-md-8  section-heading">
-                <h2 class="heading mb-3">Tentang</h2>
+                <h2 class="heading mb-3">Tentang Kami</h2>
                 <p class="text-black">Workout.Gym Fitness kami memiliki satu tujuan yang sama yaitu membantu mencapai kebugaran terbaik Anda dan menjalani gaya hidup yang sehat. Sejak didirikan, kami telah berkomitmen untuk memberikan lingkungan yang mendukung dan fasilitas terbaik bagi setiap anggota kami.
                 </p>
             </div>

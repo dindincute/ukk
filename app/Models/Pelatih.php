@@ -10,13 +10,17 @@ class Pelatih extends Model
     use HasFactory;
     protected $fillable = [
         'nama_pelatih',
-        'nama_pelatih',
         'deskripsi',
         'image',
     ];
 
     public function pelatih()
 	{
-		return $this->belongsTo(Kelas::class, 'id_pelatihs');
+		return $this->hasMany(Kelas::class, 'id_pelatih');
+	}
+
+    public function nam_pelatih()
+	{
+		return $this->hasMany(Jadwal::class, 'nam_pelatih');
 	}
 }

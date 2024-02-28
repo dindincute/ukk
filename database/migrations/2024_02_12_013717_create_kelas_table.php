@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kelas');
-          
             $table->string('image');
             $table->string('durasi');
             $table->string('deskripsi');
             $table->string('manfaat');
+            $table->foreignId('id_pelatih')->constrained('pelatihs');
             $table->timestamps();
         });
     }

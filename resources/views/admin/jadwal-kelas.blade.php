@@ -31,8 +31,8 @@
                     @foreach ($jadwal as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nama_kelas }}</td>
-                            <td>{{ $data->nama_pelatih }}</td>
+                            <td>{{ optional ($data->kelas)->nama_kelas}}</td>
+                            <td>{{ optional ($data->pelatih)->nama_pelatih }}</td>
                             <td>{{ $data->jam }}</td>
                             <td>{{ $data->kategori }}</td>
                             <td>

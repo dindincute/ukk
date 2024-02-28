@@ -20,20 +20,18 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="nama_pelatih">Nama Pelatih</label>
-                            <select name="id_pelatihs" id="id_pelatih" class="custom-select">
-                                <option value="" selected disabled hidden>--Nama Pelatih--</option>
-                                @foreach ($kelas as $data)
-                                    <option value="{{ $data->id }}"
-                                        {{ isset($kelas) ? ($kelas->id_pelatihs == $data>id ? 'selected' : '') : '' }}>
-                                        {{ $data->nama_pelatih }}</option>
+                            <label for="id_pelatih">Nama Pelatih</label>
+                            <select name="id_pelatih" id="id_pelatih" class="custom-select">
+                                <option value="" selected disabled hidden>-- Pilih Nama Pelatih--</option>
+                                @foreach ($pelatih as $data)
+                                <option value="{{ $data->id }}">{{ $data->nama_pelatih }}</option>
                                 @endforeach
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="durasi">Durasi Kelas </label>
-                            <input type="text" class="form-control" id="durasi" name="durasi"
+                            <input type="number" class="form-control" id="durasi" name="durasi"
                                 value="{{ $kelas->durasi }}" placeholder="Masukkan durasi kelas">
                         </div>
 

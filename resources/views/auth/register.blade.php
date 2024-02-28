@@ -49,9 +49,9 @@
                                         <div class="form-body">
 
                                             <div class="form-group">
-                                                <label for="name" class="sr-only">nama</label>
+                                                <label for="name" class="sr-only">username</label>
                                                 <input type="text" id="name" class="form-control"
-                                                    placeholder="Masukkan name" name="name"
+                                                    placeholder="Masukkan username" name="name"
                                                     value="{{ old('name') }}" autocapitalize="none" required>
                                             </div>
 

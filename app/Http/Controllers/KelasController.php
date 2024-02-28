@@ -36,11 +36,11 @@ class KelasController extends Controller
     // fungsi menambhakan data
     public function store(Request $request)
     {
-        //validate form
+       //validate form
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'nama_kelas' => 'required',
-            'id_pelatihs' => 'required',
+            'id_pelatih' => 'required',
             'deskripsi' => 'required',
             'manfaat' => 'required',
             'durasi' => 'required',
@@ -54,7 +54,7 @@ class KelasController extends Controller
         Kelas::create([
             'image' => $image->hashName(),
             'nama_kelas' => $request->nama_kelas,
-            'id_pelatihs' => $request->id_pelatihs,
+            'id_pelatih' => $request->id_pelatih,
             'deskripsi' => $request->deskripsi,
             'manfaat' => $request->manfaat,
             'durasi' => $request->durasi
@@ -62,6 +62,7 @@ class KelasController extends Controller
 
         //redirect to index
         return redirect('kelas')->with('success', 'Berhasil tambah data kelas.');
+
     }
 
     /**
@@ -83,7 +84,7 @@ class KelasController extends Controller
         //get post by ID
         $kelas = Kelas::findOrFail($id);
         $pelatih = Pelatih::get();
-        return view('admin.edit-kelas', compact('kelas'));
+        return view('admin.edit-kelas', compact('kelas', 'pelatih'), ['pelatih' => $pelatih]);
     }
 
     /**
@@ -95,7 +96,7 @@ class KelasController extends Controller
         $this->validate($request, [
             'image' => 'image|mimes:jpeg,jpg,png|max:2048',
             'nama_kelas' => 'required',
-            'id_pelatihs' => 'required',
+            'id_pelatih' => 'required',
             'deskripsi' => 'required',
             'manfaat' => 'required',
             'durasi' => 'required'
@@ -107,7 +108,7 @@ class KelasController extends Controller
         //update nama_kelas and nama_pelatih
         $kelas->nama_kelas = $request->nama_kelas;
         $kelas->deskripsi = $request->deskripsi;
-        $kelas->id_pelatihs = $request->id_pelatihs;
+        $kelas->id_pelatih = $request->id_pelatih;
         $kelas->manfaat = $request->manfaat;
         $kelas->durasi = $request->durasi;
 

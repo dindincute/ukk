@@ -24,10 +24,11 @@
                                     alt="Image">
                             </a>
                             <div class="class-item-text">
+                                {{-- <td>{{ optional ($data->pelatih)->nama_pelatih }}</td> --}}
                                  {{-- Untuk menampilkan nama kelas yang di isi di crud --}}
                                 <h2>{{ $class->nama_kelas }}</h2>
                                  {{-- Untuk menampilkan nama pelatih yang di isi di crud --}}
-                                <span>{{ $class->id_pelatihs }}</span>,
+                                <span>By {{ optional ($class->pelatih)->nama_pelatih}}</span>,
                                  {{-- Untuk menampilkan durasi kelas yang di isi di crud --}}
                                 <span>{{ $class->durasi }} menit</span>
                             </div>

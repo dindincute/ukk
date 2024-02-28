@@ -19,6 +19,12 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="/pelatih-kelas">
+            <i class="fas fa-user"></i>
+            <span>Pelatih</span></a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="/kelas">
             <i class="fas fa-landmark"></i>
             <span>Kelas</span></a>
@@ -29,14 +35,6 @@
             <i class="fas fa-calendar"></i>
             <span>Jadwal</span></a>
     </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="/pelatih-kelas">
-            <i class="fas fa-user"></i>
-            <span>Pelatih</span></a>
-    </li>
-
-
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
